@@ -12,7 +12,7 @@
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <Label x:Name="SettingsDevice" Text="Settings" HorizontalOptions="StartAndExpand" TextColor="Gray">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer/>
+                        <TapGestureRecognizer Tapped="SettingsDevice_tapped"/>
                     </Label.GestureRecognizers>
                 </Label>
             </StackLayout>

@@ -24,10 +24,14 @@ namespace RehabMakerV2.Pages
             {
                 Settings.LastUsedDevices = Convert.ToString(RemDevice.Text);
                 RemDevice.TextColor = Color.Green;
+                UpDate.BackgroundColor = Color.Green;
+                UpDate.Text = "Successfully";
             }
             catch
             {
                 RemDevice.TextColor = Color.Red;
+                UpDate.BackgroundColor = Color.Red;
+                UpDate.Text = "Error";
             }
         }
     }

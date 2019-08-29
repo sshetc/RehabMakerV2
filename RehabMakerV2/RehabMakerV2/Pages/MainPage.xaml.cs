@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using RehabMakerV2.Utils;
+using System.Net;
 
 namespace RehabMakerV2.Pages
 {
@@ -27,8 +28,10 @@ namespace RehabMakerV2.Pages
             button1.TextColor = Color.White;
             stackLayout2.IsVisible = false;
             DatePicker1.IsEnabled = false;
-        }
+
+    }
         Random rnd = new Random();
+        
 
         private void button1_clicked(object sender, EventArgs e)
         {
@@ -53,7 +56,7 @@ namespace RehabMakerV2.Pages
         }
         private async void button3_clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new LoginInToShare());
+            await Navigation.PushAsync(new LoginInToShare());
 
         }
 
@@ -66,45 +69,40 @@ namespace RehabMakerV2.Pages
             {
                 //await BletoothRM.ScaleTo(0.9, 1500, Easing.Linear);
                 string LastDevices = Settings.LastUsedDevices;
-
-                string Get = "";
+                if (LastDevices == null || LastDevices == "")
+                {
+                    activityIndicator.IsRunning = false;
+                    await DisplayAlert("Device number error", "Check the device number in 'Settings'", "Ok");
+                    return;
+                }
                 try
                 {
-                    Get = GETApi("api/web/ok/1");
+                    string url = "http://rehabmaker-001-site1.dtempurl.com";
+                    WebRequest req = System.Net.WebRequest.Create(url);
+                    WebResponse resp = req.GetResponse();
                 }
-                catch
+                catch (WebException)
                 {
                     label1.Text = "Server is not available. Check your Internet connection,";
                     activityIndicator.IsRunning = false;
+                    return;
                 }
-                if (Get == "\"Oks\"")
-                {
-                    //await BletoothRM.ScaleTo(1, 2000, Easing.Linear);
-                    if (LastDevices == null)
-                    {
 
-                        activityIndicator.IsRunning = false;
-                        await DisplayAlert("Device error", "Check the device number in 'Settings'", "Ok");
-                        return;
-                    }
-                    string json13 = GETApi("api/params/paraparams?id=" + LastDevices + "&simbol=1&ugo=ugo");
-                    AverageJsonParams JParams = Newtonsoft.Json.JsonConvert.DeserializeObject<AverageJsonParams>(json13);
-                    AvSpeed.Text = JParams.AverageSpeed.ToString();
-                    AvCal.Text = JParams.TotalDistance.ToString();
-                    AvDis.Text = JParams.TotalCalories.ToString();
-                    await stackLayout3.FadeTo(0, 1000);
-                    stackLayout3.IsVisible = false;
-                    await StartRM.FadeTo(1, 1000);
-                    DatePicker1.IsEnabled = true;
-                    activityIndicator.IsRunning = false;
-                }
-                else
-                    await DisplayAlert("Error", "Server is not available. Check your Internet connection", "Ok");
+                //await BletoothRM.ScaleTo(1, 2000, Easing.Linear);
+                string json13 = GETApi("api/params/paraparams?id=" + LastDevices + "&simbol=1&ugo=ugo");
+                AverageJsonParams JParams = Newtonsoft.Json.JsonConvert.DeserializeObject<AverageJsonParams>(json13);
+                AvSpeed.Text = JParams.AverageSpeed.ToString();
+                AvCal.Text = JParams.TotalDistance.ToString();
+                AvDis.Text = JParams.TotalCalories.ToString();
+                await stackLayout3.FadeTo(0, 1000);
+                stackLayout3.IsVisible = false;
+                await StartRM.FadeTo(1, 1000);
+                DatePicker1.IsEnabled = true;
                 activityIndicator.IsRunning = false;
             }
             catch
             {
-                await DisplayAlert("Device error", "Check the device number in 'Settings'", "Ok");
+                await DisplayAlert("Device error", "An error has occurred", "Ok");
                 activityIndicator.IsRunning = false;
             }
         }
@@ -123,7 +121,7 @@ namespace RehabMakerV2.Pages
                 Out = sr.ReadToEnd();
                 sr.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -241,6 +239,11 @@ namespace RehabMakerV2.Pages
             }
 
 
+        }
+
+        private async void SettingsDevice_tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PopupView());
         }
 
         private async void buttonviewdate_clicked(object sender, EventArgs e)
