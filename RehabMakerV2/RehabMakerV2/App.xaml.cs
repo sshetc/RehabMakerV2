@@ -11,7 +11,7 @@ namespace RehabMakerV2
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new Pages.SplashPage());
         }
 
         protected override void OnStart()
