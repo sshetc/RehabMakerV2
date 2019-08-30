@@ -128,7 +128,7 @@
                         Clicked="BletoothRM_clicked" 
                         HorizontalOptions="Center"
                         BackgroundColor="Transparent"
-                        BorderColor="Transparent" />
+                        BorderColor="Transparent"/>
             </StackLayout>
 
             <ActivityIndicator x:Name="activityIndicator" IsRunning="False" Color="Black"/>
@@ -150,14 +150,10 @@
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <Label x:Name="Termsofservice" Text="Terms of service"  HorizontalOptions="Start" TextColor="Gray" TextDecorations="Underline" >
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer />
-                    </Label.GestureRecognizers>
+                    
                 </Label>
                 <Label x:Name="Privacy_policy" Text="Privacy policy"  HorizontalOptions="EndAndExpand" TextColor="Gray" TextDecorations="Underline">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer />
-                    </Label.GestureRecognizers>
+                   
                 </Label>
             </StackLayout>
 
