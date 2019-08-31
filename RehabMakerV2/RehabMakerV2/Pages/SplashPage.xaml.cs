@@ -12,13 +12,17 @@ namespace RehabMakerV2.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SplashPage : ContentPage
 	{
+        Image splash;
+
         public SplashPage()
         {
             InitializeComponent();
-            splashImage.Source = ImageSource.FromResource("RehabMakerV2.Picture.logo_svg.png");
             NavigationPage.SetHasNavigationBar(this, false);
             var sub = new AbsoluteLayout();
-       
+            splash = new Image
+            {
+                Source = "logo_svg.png"
+            };
             AbsoluteLayout.SetLayoutFlags(splashImage,
                 AbsoluteLayoutFlags.PositionProportional);
             AbsoluteLayout.SetLayoutBounds(splashImage,

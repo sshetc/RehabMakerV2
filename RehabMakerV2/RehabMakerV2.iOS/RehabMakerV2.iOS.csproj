@@ -157,4 +157,7 @@
       <Name>RehabMakerV2</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_svg.png" />
+  </ItemGroup>
 </Project>
