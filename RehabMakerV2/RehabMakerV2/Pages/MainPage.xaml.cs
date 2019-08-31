@@ -78,8 +78,14 @@ namespace RehabMakerV2.Pages
                 try
                 {
                     string url = "http://rehabmaker-001-site1.dtempurl.com";
-                    WebRequest req = System.Net.WebRequest.Create(url);
-                    WebResponse resp = req.GetResponse();
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                    if(response.StatusCode == HttpStatusCode.NotFound)
+                    {
+                        response.Close();
+                        await DisplayAlert("Server is not aviable", "Check your Internet connection or wait for the server to recover", "Ok");
+                        return;
+                    }
                 }
                 catch (WebException)
                 {
@@ -243,6 +249,16 @@ namespace RehabMakerV2.Pages
 
         private async void buttonviewdate_clicked(object sender, EventArgs e)
         {
+            string url = "http://rehabmaker-001-site1.dtempurl.com";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            if (response.StatusCode == HttpStatusCode.NotFound)
+            {
+                response.Close();
+                await DisplayAlert("Server is not aviable", "Check your Internet connection or wait for the server to recover", "Ok");
+                return;
+            }
+
             string LastDevices = Settings.LastUsedDevices;
             string date = DatePicker1.Date.ToString("MM/dd/yyyy");
             try
@@ -265,23 +281,5 @@ namespace RehabMakerV2.Pages
             await Navigation.PushAsync(new PopupView());
         }
 
-        private async void buttonviewdate_clicked(object sender, EventArgs e)
-        {
-            string LastDevices = Settings.LastUsedDevices;
-            string date = DatePicker1.Date.ToString("MM/dd/yyyy");
-            try
-            {
-                if (date[0] == Convert.ToChar("0"))
-                {
-                    date = date.Remove(0, 1);
-                }
-                date = date.Replace("/", ".");
-                ApiConnect(LastDevices, date, 0);
-            }
-            catch
-            {
-                await DisplayAlert("Error", "Server is not available", "Ok");
-            }
-        }
     }
 }
