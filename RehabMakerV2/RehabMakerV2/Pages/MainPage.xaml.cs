@@ -241,6 +241,25 @@ namespace RehabMakerV2.Pages
 
         }
 
+        private async void buttonviewdate_clicked(object sender, EventArgs e)
+        {
+            string LastDevices = Settings.LastUsedDevices;
+            string date = DatePicker1.Date.ToString("MM/dd/yyyy");
+            try
+            {
+                if (date[0] == Convert.ToChar("0"))
+                {
+                    date = date.Remove(0, 1);
+                }
+                date = date.Replace("/", ".");
+                ApiConnect(LastDevices, date, 0);
+            }
+            catch
+            {
+                await DisplayAlert("Error", "Server is not available", "Ok");
+            }
+        }
+
         private async void SettingsDevice_tapped(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new PopupView());
