@@ -83,8 +83,8 @@ namespace RehabMakerV2.Pages
                 }
                 catch (WebException)
                 {
-                    label1.Text = "Server is not available. Check your Internet connection,";
                     activityIndicator.IsRunning = false;
+                    await DisplayAlert("Server is not aviable", "Check your Internet connection or wait for the server to recover", "Ok");
                     return;
                 }
 
@@ -143,7 +143,7 @@ namespace RehabMakerV2.Pages
             }
             catch
             {
-                DisplayAlert("Server is not available", "Check your Internet connection", "Ok");
+                DisplayAlert("Server is not available", "Check your Internet connection or wait for the server to recover", "Ok");
             }
             if (Get != null)
             {
