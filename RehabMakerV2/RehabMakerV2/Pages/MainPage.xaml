@@ -22,6 +22,7 @@
                         HorizontalOptions="Center"
                                BackgroundColor="Transparent"
                         BorderColor="Transparent" />
+                <Image x:Name="RehabMker"  VerticalOptions="Start" HorizontalOptions="Center" />
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,40,0,0">

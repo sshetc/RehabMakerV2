@@ -12,29 +12,23 @@ namespace RehabMakerV2.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SplashPage : ContentPage
 	{
-        Image splash;
-
+        
+        Random rnd = new Random();
         public SplashPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            var sub = new AbsoluteLayout();
-            splash = new Image
-            {
-                Source = "logo_svg.png"
-            };
-            AbsoluteLayout.SetLayoutFlags(splashImage,
-                AbsoluteLayoutFlags.PositionProportional);
-            AbsoluteLayout.SetLayoutBounds(splashImage,
-                new Rectangle(0.5, 0.5, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
-            sub.Children.Add(splashImage);
-            this.Content = sub;
+
+            splashImage.Source = "logo_svg.png";
+            splashImage.VerticalOptions = LayoutOptions.Center;
+            RehabMker.Source = "RehabMaker.png";
+            RehabMker.VerticalOptions = LayoutOptions.Center;
+
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
             await splashImage.ScaleTo(1, 2000);
             await splashImage.ScaleTo(0.9, 1500, Easing.Linear);
             await splashImage.ScaleTo(1, 1200, Easing.Linear);

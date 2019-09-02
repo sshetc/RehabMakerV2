@@ -15,20 +15,21 @@ namespace RehabMakerV2.Pages
         {
             InitializeComponent();
 
-            BletoothRM.Source = ImageSource.FromResource("RehabMakerV2.Picture.bletooth.png");
-            LogoRM.Source = ImageSource.FromResource("RehabMakerV2.Picture.logo_min_svg.png");
+            BletoothRM.Source = "bletooth.png";
+            RehabMker.Source = ImageSource.FromResource("RehabMakerV2.Picture.RehabMaker.png");
+            LogoRM.Source = "logo_min_svg.png";
             LogoRM.HorizontalOptions = LayoutOptions.Center;
-            button3.Source = ImageSource.FromResource("RehabMakerV2.Picture.brows.png");
-            button4.Source = ImageSource.FromResource("RehabMakerV2.Picture.brows.png");
-            StartRM.Source = ImageSource.FromResource("RehabMakerV2.Picture.start_svg.png");
+            button4.Source = "brows.png";
+            button3.Source = "brows.png";
+            StartRM.Source = "start_svg.png";
             StartRM.Opacity = 0;
-            StopRM.Source = ImageSource.FromResource("RehabMakerV2.Picture.stop.png");
+            StopRM.Source = "stop.png";
             StopRM.IsVisible = false;
             button1.BackgroundColor = Color.Red;
             button1.TextColor = Color.White;
             stackLayout2.IsVisible = false;
             DatePicker1.IsEnabled = false;
-
+            buttonViewDate.IsEnabled = false;
     }
         Random rnd = new Random();
         
@@ -104,6 +105,7 @@ namespace RehabMakerV2.Pages
                 stackLayout3.IsVisible = false;
                 await StartRM.FadeTo(1, 1000);
                 DatePicker1.IsEnabled = true;
+                buttonViewDate.IsEnabled = true;
                 activityIndicator.IsRunning = false;
             }
             catch

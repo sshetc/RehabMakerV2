@@ -3,10 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RehabMakerV2.Pages.SplashPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Image x:Name="splashImage"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Image x:Name="splashImage" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Image x:Name="RehabMker"  VerticalOptions="Center" HorizontalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
