@@ -23,6 +23,9 @@
                                BackgroundColor="Transparent"
                         BorderColor="Transparent" />
                 <Image x:Name="RehabMker"  VerticalOptions="Start" HorizontalOptions="Center" />
+                <Image Source="bletooth"
+                   WidthRequest="{OnPlatform iOS=300, Android=250}"
+                   HorizontalOptions="Center" />
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,40,0,0">
@@ -129,7 +132,8 @@
                         Clicked="BletoothRM_clicked" 
                         HorizontalOptions="Center"
                         BackgroundColor="Transparent"
-                        BorderColor="Transparent"/>
+                        BorderColor="Transparent"
+                        Source="bletooth"/>
             </StackLayout>
 
             <ActivityIndicator x:Name="activityIndicator" IsRunning="False" Color="Black"/>
