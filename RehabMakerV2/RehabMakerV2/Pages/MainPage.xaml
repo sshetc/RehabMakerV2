@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:stateContainerDemo="clr-namespace:RehabMakerV2;assembly=RehabMakerV2"
+             xmlns:stateContainerDemo="clr-namespace:RehabMakerV2;assembly=RehabMaker"
              xmlns:local="clr-namespace:RehabMakerV2"
              x:Class="RehabMakerV2.Pages.MainPage"
              NavigationPage.HasNavigationBar="False"
@@ -23,6 +23,9 @@
                                BackgroundColor="Transparent"
                         BorderColor="Transparent" />
                 <Image x:Name="RehabMker"  VerticalOptions="Start" HorizontalOptions="Center" />
+                <Image Source="bletooth"
+                   WidthRequest="{OnPlatform iOS=300, Android=250}"
+                   HorizontalOptions="Center" />
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,40,0,0">
@@ -125,16 +128,12 @@
                 <Label x:Name="label1" Text="Device disconnected,"   HorizontalOptions="Center" ></Label>
                 <Label x:Name="label2" Text="tap to connect"  HorizontalOptions="Center" ></Label>
                 <ImageButton x:Name="BletoothRM"
-                        Source="Bletooth"
-                        StyleClass="BletoothRM"
+                             StyleClass="BletoothRM"
                         Clicked="BletoothRM_clicked" 
                         HorizontalOptions="Center"
                         BackgroundColor="Transparent"
-                        BorderColor="Transparent"/>
-                <ImageButton x:Name="xamLogo"
-                    Source="XamarinLogo"
-                   WidthRequest="{OnPlatform iOS=300, Android=250}"
-                   HorizontalOptions="Center" />
+                        BorderColor="Transparent"
+                        Source="bletooth"/>
             </StackLayout>
 
             <ActivityIndicator x:Name="activityIndicator" IsRunning="False" Color="Black"/>
@@ -144,7 +143,7 @@
                 <ImageButton x:Name="StartRM"
                         Clicked="StartRM_clicked" 
                         HorizontalOptions="Center"
-                        BackgroundColor="Transparent"
+                               BackgroundColor="Transparent"
                         BorderColor="Transparent" />
 
                 <ImageButton x:Name="StopRM"
