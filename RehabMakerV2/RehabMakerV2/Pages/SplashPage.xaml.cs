@@ -19,9 +19,7 @@ namespace RehabMakerV2.Pages
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 
-            splashImage.Source = "logo_svg.png";
             splashImage.VerticalOptions = LayoutOptions.Center;
-            RehabMker.Source = "RehabMaker.png";
             RehabMker.VerticalOptions = LayoutOptions.Center;
 
         }

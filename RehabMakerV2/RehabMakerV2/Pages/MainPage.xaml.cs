@@ -17,15 +17,8 @@ namespace RehabMakerV2.Pages
             InitializeComponent();
 
 
-            //BletoothRM.Source = Device.RuntimePlatform == Device.Android ? "bletooth.png" : ImageSource.FromResource("RehabMakerV2.Picture.bletooth.png");
-            RehabMker.Source = Device.RuntimePlatform == Device.Android ? "RehabMaker.png" : ImageSource.FromResource("RehabMakerV2.Picture.RehabMaker.png");
-            LogoRM.Source = Device.RuntimePlatform == Device.Android ? "logo_min_svg.png" : ImageSource.FromResource("RehabMakerV2.Picture.logo_min_svg.png");
             LogoRM.HorizontalOptions = LayoutOptions.Center;
-            button4.Source = Device.RuntimePlatform == Device.Android ? "brows.png" : ImageSource.FromResource("RehabMakerV2.Picture.brows.png");
-            button3.Source = Device.RuntimePlatform == Device.Android ? "brows.png" : ImageSource.FromResource("RehabMakerV2.Picture.brows.png");
-            StartRM.Source = Device.RuntimePlatform == Device.Android ? "start_svg.png" : ImageSource.FromResource("RehabMakerV2.Picture.start_svg.png");
             StartRM.Opacity = 0;
-            StopRM.Source = Device.RuntimePlatform == Device.Android ? "stop.png" : ImageSource.FromResource("RehabMakerV2.Picture.stop.png");
             StopRM.IsVisible = false;
             button1.BackgroundColor = Color.Red;
             button1.TextColor = Color.White;

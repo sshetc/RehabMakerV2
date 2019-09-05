@@ -19,13 +19,10 @@
 
             <StackLayout x:Name="stackLayoutFB">
                 <ImageButton x:Name="LogoRM"
+                             Source="LogoMinSvg"
                         HorizontalOptions="Center"
                                BackgroundColor="Transparent"
                         BorderColor="Transparent" />
-                <Image x:Name="RehabMker"  VerticalOptions="Start" HorizontalOptions="Center" />
-                <Image Source="bletooth"
-                   WidthRequest="{OnPlatform iOS=300, Android=250}"
-                   HorizontalOptions="Center" />
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,40,0,0">
@@ -79,6 +76,7 @@
                     <Label x:Name="AvCal" Text="0" FontAttributes="Bold"   ></Label>
                     <Label Text="cal"  ></Label>
                     <ImageButton x:Name="button3"
+                                 Source="Brows"
                         VerticalOptions="CenterAndExpand"
                         Clicked="button3_clicked" 
                         HorizontalOptions="EndAndExpand"
@@ -104,6 +102,7 @@
                     <Label x:Name="AvDateCal" Text="0" FontAttributes="Bold"  ></Label>
                     <Label Text="cal"  ></Label>
                     <ImageButton x:Name="button4"
+                                 Source="Brows"
                         VerticalOptions="CenterAndExpand"
                         Clicked="button3_clicked" 
                         HorizontalOptions="EndAndExpand"
@@ -128,12 +127,13 @@
                 <Label x:Name="label1" Text="Device disconnected,"   HorizontalOptions="Center" ></Label>
                 <Label x:Name="label2" Text="tap to connect"  HorizontalOptions="Center" ></Label>
                 <ImageButton x:Name="BletoothRM"
+                             Source="Bletooth"
                              StyleClass="BletoothRM"
                         Clicked="BletoothRM_clicked" 
                         HorizontalOptions="Center"
                         BackgroundColor="Transparent"
                         BorderColor="Transparent"
-                        Source="bletooth"/>
+                        />
             </StackLayout>
 
             <ActivityIndicator x:Name="activityIndicator" IsRunning="False" Color="Black"/>
@@ -141,12 +141,14 @@
             <StackLayout VerticalOptions="CenterAndExpand">
 
                 <ImageButton x:Name="StartRM"
+                             Source="StartSvg"
                         Clicked="StartRM_clicked" 
                         HorizontalOptions="Center"
                                BackgroundColor="Transparent"
                         BorderColor="Transparent" />
 
                 <ImageButton x:Name="StopRM"
+                             Source="Stop"
                         Clicked="StopRM_clicked" 
                         HorizontalOptions="Center"
                         BackgroundColor="Transparent"

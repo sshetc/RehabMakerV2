@@ -15,9 +15,7 @@ namespace RehabMakerV2.Pages
 		public LoginInToShare ()
 		{
 			InitializeComponent ();
-            LogoRM.Source = ImageSource.FromResource("RehabMakerV2.Picture.logo_svg.png");
-            LogItSh.Source = ImageSource.FromResource("RehabMakerV2.Picture.LoginInToShare.png");
-            RehabMker.Source = ImageSource.FromResource("RehabMakerV2.Picture.RehabMaker.png");
+            
         }
     }
 }

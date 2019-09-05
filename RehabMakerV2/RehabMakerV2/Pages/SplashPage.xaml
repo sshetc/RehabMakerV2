@@ -4,8 +4,8 @@
              x:Class="RehabMakerV2.Pages.SplashPage">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand">
-            <Image x:Name="splashImage" VerticalOptions="Center" HorizontalOptions="Center" />
-            <Image x:Name="RehabMker"  VerticalOptions="Center" HorizontalOptions="Center" />
+            <Image x:Name="splashImage" Source="LogoSvg" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Image x:Name="RehabMker"  Source="RehabMaker" VerticalOptions="Center" HorizontalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

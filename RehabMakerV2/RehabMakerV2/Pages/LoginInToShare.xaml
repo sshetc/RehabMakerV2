@@ -23,11 +23,11 @@
 
         <StackLayout Padding="12">
             <StackLayout VerticalOptions="Start">
-                <Image x:Name="LogoRM"  VerticalOptions="Start" HorizontalOptions="Center" />
-                <Image x:Name="RehabMker"  VerticalOptions="Start" HorizontalOptions="Center" />
+                <Image x:Name="LogoRM" Source="LogoMinSvg" VerticalOptions="Start" HorizontalOptions="Center" />
+                <Image x:Name="RehabMker" Source="RehabMaker"  VerticalOptions="Start" HorizontalOptions="Center" />
             </StackLayout>
             <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" >
-                <Image x:Name="LogItSh"  VerticalOptions="Start" HorizontalOptions="Center" />
+                <Image x:Name="LogItSh" Source="LoginInToShare"  VerticalOptions="Start" HorizontalOptions="Center" />
                 <Button 
                 x:Name="buttonGoogle" 
                 Text="Google" 
