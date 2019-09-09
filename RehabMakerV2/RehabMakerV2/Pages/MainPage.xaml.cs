@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using RehabMakerV2.Utils;
 using System.Net;
-using UIKit;
+
 
 namespace RehabMakerV2.Pages
 {
